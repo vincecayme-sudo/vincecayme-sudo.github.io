@@ -1,4 +1,4 @@
-
+/* LOADING SCREEN */
     #loader-wrapper {
     position: fixed;
     top: 0;
@@ -14,7 +14,7 @@
     transition: opacity 0.5s ease;
 }
 
-    /* A simple CSS spinning wheel */
+    /* CSS spinning wheel */
     .spinner {
     width: 50px;
     height: 50px;
@@ -28,8 +28,9 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* LOADING SCREEN* */
 
-
+/* NAVIGATION MENU/BAR */
 nav { 
     display: flex;
     list-style: none;
@@ -37,4 +38,23 @@ nav {
     justify-content: space-around;
     position: sticky;
 }
+/* NAVIGATION MENU/BAR */
 
+/* HERO SECTION */
+.hero { 
+    /* 100vh means 100% of viewport height*/
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -200px;
+    left: -50px;
+}
+
+.hero h2 { 
+    
+}
+/* HERO SECTION */
