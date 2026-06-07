@@ -40,26 +40,87 @@
 }
 
 
+/* 1. Base animation setup */
+@keyframes globalReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Target all headings, paragraphs, and list items inside the wrapper */
+.reveal-all h1, 
+.reveal-all h2, 
+.reveal-all h3, 
+.reveal-all p, 
+.reveal-all li, 
+.reveal-all button {
+  opacity: 0; /* Keeps them hidden before loading */
+  animation: globalReveal 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: red; /* match your accent color */
+    z-index: 10000;
+    transition: width 0.1s linear;
+}
 
 /* HERO SECTION */
 .hero { 
-    /* 100vh means 100% of viewport height*/
     min-height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 2%;
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
 
+.hero-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+
+.hero-text {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
+}
 
-    justify-content: flex-start;
-    align-items: flex-start;
-    
-    padding: 100px 10%;
+#puppet-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(5px, 0.6vw, 10px);
+    line-height: 1.2;
+    color: #ffffff;
+    background: #111111;
+    padding: px;
+    white-space: pre;
+    border-radius: 4px;
+    flex-shrink: 1;
+    overflow: hidden;
+    align-self: center;
 }
 
 .hero h1 { 
     font-family: var(--main-font);
-    font-size: 3.2rem;
+    font-size: 5rem;
     font-weight: 800;
+    
     text-transform: uppercase;
     margin: 0 0 8px 0; /*left,right,bottom,top*/
 }
@@ -69,18 +130,18 @@
     font-size: 1rem;
     font-style: italic;
     letter-spacing: -0.01em;
-    margin-left: 5px;
+    margin-left: 8vw;
 }
 /* NAVIGATION MENU/BAR */
 .menu ul { 
     display: flex;
     flex-direction: column;
     list-style: none;
-    align-items: center;
+    align-items: flex-start;
 
-    margin-top: 20vh;
-    margin-left: 8vw;
-    gap: 50px; /* gap between ul items */
+    margin-top: 8vh;
+    margin-left: 0;
+    gap: 40px;
     width: 100%;
 }
 
