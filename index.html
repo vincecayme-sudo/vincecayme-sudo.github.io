@@ -16,42 +16,50 @@
 
     
     <header id="header"> 
-        <nav> 
-            <ul>
-                <li><a href=#hero>{Home}</a></li>
-                <li><a href=#about>{About}</a></li>
-                <li><a href=#projects>{Projects}</a></li>
-                <li>{Contact}</li>
-            </ul>
-        </nav>
+        
     </header>
 
     <main> 
-        <section class="hero"> 
-            <h1>Vince Cayme - Full Stack Engineer</h1>
-            <h2><em>Aspiring Quant</em></h2>
+        <section class="hero" id="hero"> 
+            <h1>Vince Cayme</h1>
+            <h2>Full Stack Developer - Aspiring Quant - Embedded Systems</h2>
+            <section class="menu" id="menu">  
+            <ul>
+                <li><a href=#hero>{HOME}</a></li>
+                <li><a href=#about>{ABOUT}</a></li>
+                <li><a href=#projects>{PROJECTS}</a></li>
+                <li><a href=#contact>{CONTACT}</a></li>
+            </ul>
+        </section>
         </section>
 
-        <section class="about"> 
+        
+
+        <section class="about" id="about"> 
             <h2>About Me:</h2>
             <p> 
-                I am a current Computer Science student majoring in Software Development with a Diploma of Information Technology.
+                Current Computer Science student majoring in Software Development with a Diploma of Information Technology.
             </p>
         </section>
 
-        <section class="projects">
+        <section class="projects" id="projects">
             <h2>Project 1: C++ Chess Engine</h2>
             <p>Bitboards, move hashing, speed optimisation</p>
             <h2>Project 2: Wellness Website</h2>
             <h2>Project 3: Web application TBD</h2>
-        </sectionp>
+            <div class="nav-btn"> 
+                <button>Left</button>
+                <button>Right</button>
+            </div>
+            
+        </section>
 
-        <section class="skills"> 
+        <section class="skills" id="skills"> 
             <h2>Technical Skills:</h2>
             <p>C++, HTML, CSS, JavaScript, SQL, PHP</p>
         </section>
 
-        <section class="contact">
+        <section class="contact" id="contact">
             <form method="post"> 
                 <fieldset> 
                     <h2>Contact Form</h2>
