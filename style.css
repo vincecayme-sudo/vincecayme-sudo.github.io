@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Syne:wght@700;800&display=swap');
+
 :root { 
     --main-font: 'Syne', sans-serif;
     --secondary-font: 'Geist Mono', monospace;
+
+    /* Glitch Colors - for chromatic aberration */
+    --glitch-red: crimson;
+    --glitch-purple: purple;
+
+    /* Extended palette for variety */
+    --color-pink: #ff6b9d;
+    --color-success: #00ff87;
+    --color-warning: #fffa65;
 }
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #111111;
+    color:white;
+    
 }
 /* LOADING SCREEN */
     #loader-wrapper {
@@ -82,14 +93,15 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0px 2%;
-    color: silver;
+    padding: 0px 6%;
     position: relative;
     overflow: hidden;
+    
     
 }
 
 .hero-inner {
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,15 +114,51 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    margin-top: -500px;
 }
+#glitch-text {
+    animation: text-glitch 6s ease-in-out infinite;
+    
+}
+
+@keyframes text-glitch {
+    0%,
+    92%,
+    100% {
+        transform: translateX(0);
+        text-shadow: none;
+    }
+    93% {
+        transform: translateX(-2px);
+        text-shadow:
+            20px 0 var(--glitch-purple),
+            -20px 0 var(--glitch-red);
+    }
+    94% {
+        transform: translateX(2px);
+        text-shadow:
+            -20px 0 var(--glitch-purple),
+            20px 0 var(--glitch-red);
+    }
+    95% {
+        transform: translateX(-1px);
+        text-shadow:
+            10px 0 var(--glitch-purple),
+            -10px 0 var(--glitch-red);
+    }
+    96% {
+        transform: translateX(1px);
+        text-shadow: none;
+    }
+}
+
 
 #puppet-container {
     font-family: 'Courier New', Courier, monospace;
     font-size: clamp(5px, 0.6vw, 10px);
     line-height: 1.2;
-    color: #ffffff;
-    background: #111111;
-    padding: px;
+    color: crimson;
+    padding: 0 0 200px 0px;
     white-space: pre;
     border-radius: 4px;
     flex-shrink: 1;
@@ -124,7 +172,10 @@
     font-weight: 800;
     
     text-transform: uppercase;
+    transform: scaleY(6); 
     margin: 0 0 8px 0; /*left,right,bottom,top*/
+
+    
 }
 
 .hero h2 { 
@@ -134,62 +185,174 @@
     letter-spacing: -0.01em;
     margin-left: 8vw;
 }
-/* NAVIGATION MENU/BAR */
-.menu ul { 
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    align-items: flex-start;
 
-    margin-top: 8vh;
-    margin-left: 15vw;
-    gap: 40px;
-    width: 100%;
+.hero img { 
+    max-width: 30%;
+    height: auto;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
 }
-
-.menu ul li a { 
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 800;
+/* NAVIGATION MENU/BAR */
+.puppet-nav a { 
     text-decoration: none;
-    color: grey;
     transition: transform 0.2s ease, background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
-.menu ul li a:hover { 
-    
+.puppet-nav a:hover {
     transform: scale(1.2);
     
     color: red;
 }
+.puppet-nav p{
+    position: absolute;
+    display: inline-flex;
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    list-style: none;
+    
+    transform: translateX(-50%); /* center each label on its string */
+}
+
+/* Position each label under its finger string.
+   Tweak these left% values to line up with your actual strings. */
+.puppet-nav p:nth-child(1) { left: 49.5%; top: 82%} /* {HOME}     */
+.puppet-nav p:nth-child(2) { left: 59.5%; top: 79%} /* {ABOUT}    */
+.puppet-nav p:nth-child(3) { left: 64%; top: 76% } /* {PROJECTS} */
+.puppet-nav p:nth-child(4) { left: 73.5%; top: 78% } /* {SKILLS} */
+.puppet-nav p:nth-child(5) { left: 82.5%; top: 84%} /* {CONTACT}  */
+
 
 /* ABOUT SECTION */
 
-#about { 
+.about { 
     min-height: 40vh;
     width: 100%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    display: block;
+    padding-left: 200px;
+    padding-right: 200px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
-#projects { 
+.about p { 
+    font-weight: 400;
+    font-size: 1.25em;
+    padding-top: 25px;
+    box-shadow: #111111;
+}
+
+/* PROJECTS SECTION */
+.projects { 
+    position: relative;
     min-height: 80vh;
     width: 100%;
-    border-bottom: 2px solid black;
-    
-    
+    border-bottom: 2px solid white;
+    display: grid;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
-.nav-btn { 
-    display: flex;
+.project-slide {
+    display: none;
+}
+.project-slide.active {
+    display: block;
+}
+
+#project-counter { 
+    position: absolute;
+    left: 2%;
+    top: 0%;
+    font-size: 3em;
+    font-family: var(--main-font);
+}
+
+.projects p { 
+    padding-bottom: 50px;
+}
+button { 
+    display: inline-flex;
     position: relative;
-    bottom: -600px;
+    bottom: -70vh;
+    left: 45vw;
     justify-content: center;
+    align-self: center;
 
-    
+    --glow-color: white;
+ --glow-spread-color: red;
+ --btn-color: black;
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 0.8em .25em var(--glow-color),
+        0 0 2em 0.3em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: absolute;
+ bottom: 4%;
+ transition: all 0.3s;
 }
+#prev-btn { 
+    left: 45%;
+}
+
+#next-btn { 
+    left: 50%;
+}
+
+/*
+button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(5.5em) rotateX(35deg) scale(1, .6);
+}
+ */
+
+button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 2em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+#project-slider { 
+    display: grid;
+
+    justify-content: center;
+    width: 80%;
+}
+
+.projects iframe { 
+    width: 100%;
+    height: 60vh;
+} 
+
 body { 
     font-family: var(--secondary-font);
+    background-color: #111111;
+    position: relative;
 }
 
 footer { 

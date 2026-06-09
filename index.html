@@ -19,19 +19,24 @@
     <main> 
         <section class="hero" id="hero"> 
             <div class="hero-inner">
-                <div class="hero-text">
-                    <h1>Vince Cayme</h1>
+                <div class="hero-text" id="glitch-text">
+                    <h1 >Vince Cayme</h1>
                     <h2>Full Stack Developer - Aspiring Quant - Embedded Systems</h2>
-                    <section class="menu" id="menu">  
-                        <ul>
-                            <li><a href=#hero>{HOME}</a></li>
-                            <li><a href=#about>{ABOUT}</a></li>
-                            <li><a href=#projects>{PROJECTS}</a></li>
-                            <li><a href=#contact>{CONTACT}</a></li>
-                        </ul>
-                    </section>
                 </div>
-                <pre id="puppet-container">Loading puppet animation...</pre>
+
+            <img src="headshot.png" alt="Me">
+                    
+                <div class="puppet-wrapper"> 
+                    <pre id="puppet-container">Loading puppet animation...</pre>
+                    <nav class="puppet-nav">  
+                            <p><a href=#hero>{HOME}</a></p>
+                            <p><a href=#about>{ABOUT}</a></p>
+                            <p><a href=#projects>{PROJECTS}</a></p>
+                            <p><a href=#skills>{SKILLS}</a></p>
+                            <p><a href=#contact>{CONTACT}</a></p>
+                    </nav>
+                </div>
+                
             </div>
         </section>
 
@@ -39,21 +44,36 @@
 
         <section class="about" id="about"> 
             <h2>About Me:</h2>
-            <p> 
-                Current Computer Science student majoring in Software Development with a Diploma of Information Technology.
-            </p>
+            <p>I like computers and their complexity. I also like to pick up heavy weights and play chess. </p>
+            <p>I abhor not <em>knowing</em> about something and have an <strong>insatiable curiosity</strong> of which I am proud to say is my <strong>strongest asset</strong>.</p>
+            <p>I'm a CS student in <strong>Melbourne</strong> working with embedded systems, building full stack web applications, and a particular interest in quantitative finance. Many interests, subdued by my <strong>unrelenting persistence for understanding</strong>.</p>
+            <p>Markets seem to be an ever evolving puzzle, and that intrigues me.</p>
         </section>
 
         <section class="projects" id="projects">
-            <h2>Project 1: C++ Chess Engine</h2>
-            <p>Bitboards, move hashing, speed optimisation</p>
-            <h2>Project 2: Wellness Website</h2>
-            <h2>Project 3: Web application TBD</h2>
-            <div class="nav-btn"> 
-                <button>Left</button>
-                <button>Right</button>
+        <div class="project-slider">
+            <div class="project-slide active">
+                <h2>Project 1: C++ Chess Engine (UCI Compliant)</h2>
+                <p>Bitboards, move hashing, speed optimisation</p>
             </div>
-            
+            <div class="project-slide">
+                <h2>Project 2: Wellness Website</h2>
+                <p>This is a website I developed for a small business that specialises in general beauty and wellness, massage therapy and scalp treatments.</p>
+                <p>The website can handle bookings, has a contact form, and interactive informational cards for different services on offer.</p>
+                <iframe src="https://vincecayme-sudo.github.io/wellnesswebsite/"></iframe>
+            </div>
+            <div class="project-slide">
+                <h2>Project 3: Web Application TBD</h2>
+                <p>Still in the works...</p>
+            </div>
+        </div>
+        
+        <button id="prev-btn">&#8592;</button>
+        <button id="next-btn">&#8594;</button>
+        
+        <div> 
+            <span id="project-counter">1 / 3</span>
+        </div>
         </section>
 
         <section class="skills" id="skills"> 
@@ -78,6 +98,7 @@
     <footer>
         <p>2026 Vince Cayme</p>
     </footer>
+    <script src="ascii-morph.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
