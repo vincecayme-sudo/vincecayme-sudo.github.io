@@ -97,7 +97,10 @@
     position: relative;
     overflow: hidden;
     
-    
+    background-image: url("puppet_ascii.png");
+    background-size: auto 95%;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 .hero-inner {
@@ -152,7 +155,7 @@
     }
 }
 
-
+/*
 #puppet-container {
     font-family: 'Courier New', Courier, monospace;
     font-size: clamp(5px, 0.6vw, 10px);
@@ -165,6 +168,7 @@
     overflow: hidden;
     align-self: center;
 }
+*/
 
 .hero h1 { 
     font-family: var(--main-font);
@@ -186,13 +190,14 @@
     margin-left: 8vw;
 }
 
-.hero img { 
+.hero img {  /* Headshot */
     max-width: 30%;
     height: auto;
     position: absolute;
     left: 0%;
     bottom: 0%;
 }
+
 /* NAVIGATION MENU/BAR */
 .puppet-nav a { 
     text-decoration: none;
@@ -217,11 +222,11 @@
 
 /* Position each label under its finger string.
    Tweak these left% values to line up with your actual strings. */
-.puppet-nav p:nth-child(1) { left: 49.5%; top: 82%} /* {HOME}     */
-.puppet-nav p:nth-child(2) { left: 59.5%; top: 79%} /* {ABOUT}    */
-.puppet-nav p:nth-child(3) { left: 64%; top: 76% } /* {PROJECTS} */
-.puppet-nav p:nth-child(4) { left: 73.5%; top: 78% } /* {SKILLS} */
-.puppet-nav p:nth-child(5) { left: 82.5%; top: 84%} /* {CONTACT}  */
+.puppet-nav p:nth-child(1) { left: 43%; top: 95%} /* {HOME}     */
+.puppet-nav p:nth-child(2) { left: 56%; top: 92%} /* {ABOUT}    */
+.puppet-nav p:nth-child(3) { left: 61.25%; top: 88% } /* {PROJECTS} */
+.puppet-nav p:nth-child(4) { left: 74.5%; top: 91% } /* {SKILLS} */
+.puppet-nav p:nth-child(5) { left: 85.9%; top: 95%} /* {CONTACT}  */
 
 
 /* ABOUT SECTION */
@@ -270,12 +275,13 @@
 }
 
 .projects p { 
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 button { 
+    
     display: inline-flex;
     position: relative;
-    bottom: -70vh;
+    bottom: -75vh;
     left: 45vw;
     justify-content: center;
     align-self: center;
@@ -286,7 +292,7 @@ button {
  border: .25em solid var(--glow-color);
  padding: 1em 3em;
  color: var(--glow-color);
- font-size: 15px;
+ font-size: 10px;
  font-weight: bold;
  background-color: var(--btn-color);
  border-radius: 1em;
@@ -296,7 +302,7 @@ button {
         inset 0 0 .75em .25em var(--glow-color);
  text-shadow: 0 0 .5em var(--glow-color);
  position: absolute;
- bottom: 4%;
+ bottom: 2%;
  transition: all 0.3s;
 }
 #prev-btn { 

@@ -35,6 +35,7 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = progress + '%';
 });
 
+/*
 /////////////////////////////////////////////////////////////
 //ASCII ART LOADER
 
@@ -74,6 +75,7 @@ window.addEventListener('scroll', () => {
 
   // Initialise the animation loop
   initPuppetAnimation();
+  */
 
   //////////////////////////////////////////////
   //project slides
