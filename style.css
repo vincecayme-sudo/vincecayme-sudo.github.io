@@ -155,20 +155,6 @@
     }
 }
 
-/*
-#puppet-container {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(5px, 0.6vw, 10px);
-    line-height: 1.2;
-    color: crimson;
-    padding: 0 0 200px 0px;
-    white-space: pre;
-    border-radius: 4px;
-    flex-shrink: 1;
-    overflow: hidden;
-    align-self: center;
-}
-*/
 
 .hero h1 { 
     font-family: var(--main-font);
