@@ -14,6 +14,7 @@
     setTimeout(() => {
         loader.style.display = 'none';
     }, 500);
+    
     //ASCII ANIMATION BACKGROUND
     initAsciiMorph(document.body, {
         opacity: 0.15,   // how visible — lower = more subtle
