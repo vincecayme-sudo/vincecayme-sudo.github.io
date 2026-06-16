@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:white;
+    
     
 }
 /* LOADING SCREEN */
@@ -96,15 +96,9 @@
     padding: 0px 6%;
     position: relative;
     overflow: hidden;
-    
-    background-image: url("puppet_ascii.png");
-    background-size: auto 95%;
-    background-repeat: no-repeat;
-    background-position: right;
 }
 
 .hero-inner {
-    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -117,11 +111,11 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    margin-top: -500px;
+    color: white;
+    padding-top: 150px;
 }
 #glitch-text {
     animation: text-glitch 6s ease-in-out infinite;
-    
 }
 
 @keyframes text-glitch {
@@ -164,8 +158,6 @@
     text-transform: uppercase;
     transform: scaleY(6); 
     margin: 0 0 8px 0; /*left,right,bottom,top*/
-
-    
 }
 
 .hero h2 { 
@@ -176,17 +168,17 @@
     margin-left: 8vw;
 }
 
-.hero img {  /* Headshot */
-    max-width: 30%;
+.headshot {  /* Headshot */
+    max-width: 50%;
     height: auto;
-    position: absolute;
-    left: 0%;
-    bottom: 0%;
+    padding-top: 75px;
+    align-self: center;
 }
 
 /* NAVIGATION MENU/BAR */
 .puppet-nav a { 
     text-decoration: none;
+    color: white;
     transition: transform 0.2s ease, background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
@@ -195,24 +187,50 @@
     
     color: red;
 }
-.puppet-nav p{
+
+.ascii-art-container {
+    position: relative;
+    right: 5%;
+    top: 0;
+    height: 95vh;
+    width: auto;
+    margin-left: auto;
+}
+
+.puppet-art {
+    height: 95vh;
+    width: auto;
+    display: block;
+}
+
+.puppet-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.puppet-nav p {
     position: absolute;
     display: inline-flex;
     font-family: var(--secondary-font);
     font-size: 1.5rem;
     font-weight: 800;
     list-style: none;
-    
-    transform: translateX(-50%); /* center each label on its string */
+    transform: translateX(-50%);
+    pointer-events: all;
 }
+
 
 /* Position each label under its finger string.
    Tweak these left% values to line up with your actual strings. */
-.puppet-nav p:nth-child(1) { left: 43%; top: 95%} /* {HOME}     */
-.puppet-nav p:nth-child(2) { left: 56%; top: 92%} /* {ABOUT}    */
-.puppet-nav p:nth-child(3) { left: 61.25%; top: 88% } /* {PROJECTS} */
-.puppet-nav p:nth-child(4) { left: 74.5%; top: 91% } /* {SKILLS} */
-.puppet-nav p:nth-child(5) { left: 85.9%; top: 95%} /* {CONTACT}  */
+.puppet-nav p:nth-child(1) { left: 10%; top: 98%} /* {HOME}     */
+.puppet-nav p:nth-child(2) { left: 31.5%; top: 94%} /* {ABOUT}    */
+.puppet-nav p:nth-child(3) { left: 40.25%; top: 89% } /* {PROJECTS} */
+.puppet-nav p:nth-child(4) { left: 60.5%; top: 91% } /* {SKILLS} */
+.puppet-nav p:nth-child(5) { left: 79%; top: 97%} /* {CONTACT}  */
 
 
 /* ABOUT SECTION */
@@ -220,29 +238,51 @@
 .about { 
     min-height: 40vh;
     width: 100%;
-    display: block;
+    
     padding-left: 200px;
     padding-right: 200px;
+    padding-bottom: 200px;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
 }
 
+.about-text { 
+    background-color: rgba(40, 40, 40, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2rem 2.5rem;
+    margin: 5%;
+
+    font-size: 1.75em;
+
+}
+
 .about p { 
     font-weight: 400;
-    font-size: 1.25em;
     padding-top: 25px;
-    box-shadow: #111111;
+    font-size: 0.75em;
+}
+
+.about-video { 
+    display: flex;
+    position: relative;
+    margin-left: 100px;
+
+    z-index: -50;
+    
 }
 
 /* PROJECTS SECTION */
 .projects { 
     position: relative;
-    min-height: 80vh;
+    min-height: 90vh;
     width: 100%;
     border-bottom: 2px solid white;
     display: grid;
     padding-left: 200px;
     padding-right: 200px;
+    padding-top: 50px;
+    color: white;
 }
 
 .project-slide {
@@ -254,16 +294,24 @@
 
 #project-counter { 
     position: absolute;
-    left: 2%;
-    top: 0%;
+    left: 1%;
+    top: 2%;
     font-size: 3em;
     font-family: var(--main-font);
+
+    background-color: rgba(40, 40, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem 1.5rem;
+}
+
+.projects h2 { 
+    font-size: 2.25em;
 }
 
 .projects p { 
     padding-bottom: 20px;
 }
-button { 
+.projects button { 
     
     display: inline-flex;
     position: relative;
@@ -273,23 +321,23 @@ button {
     align-self: center;
 
     --glow-color: white;
- --glow-spread-color: red;
- --btn-color: black;
- border: .25em solid var(--glow-color);
- padding: 1em 3em;
- color: var(--glow-color);
- font-size: 10px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 0.8em .25em var(--glow-color),
-        0 0 2em 0.3em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
- text-shadow: 0 0 .5em var(--glow-color);
- position: absolute;
- bottom: 2%;
- transition: all 0.3s;
+    --glow-spread-color: red;
+    --btn-color: black;
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 10px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 0.8em .25em var(--glow-color),
+            0 0 2em 0.3em var(--glow-spread-color),
+            inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: absolute;
+    bottom: 2%;
+    transition: all 0.3s;
 }
 #prev-btn { 
     left: 45%;
@@ -299,23 +347,7 @@ button {
     left: 50%;
 }
 
-/*
-button::after {
- pointer-events: none;
- content: "";
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(2em);
- opacity: .7;
- transform: perspective(5.5em) rotateX(35deg) scale(1, .6);
-}
- */
-
-button:hover {
+.projects button:hover {
  color: var(--btn-color);
  background-color: var(--glow-color);
  box-shadow: 0 0 1em .25em var(--glow-color),
@@ -323,7 +355,7 @@ button:hover {
         inset 0 0 .75em .25em var(--glow-color);
 }
 
-button:active {
+.projects button:active {
  box-shadow: 0 0 0.6em .25em var(--glow-color),
         0 0 2.5em 2em var(--glow-spread-color),
         inset 0 0 .5em .25em var(--glow-color);
@@ -338,8 +370,128 @@ button:active {
 
 .projects iframe { 
     width: 100%;
-    height: 60vh;
+    height: 70vh;
 } 
+
+/* Skills Section */
+.skills { 
+    min-height: 100vh;
+    width: auto;
+    color: white;
+    font-size: 1.75em;
+    padding-top: 50px;
+    
+}
+
+.skills-react {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-react h2 { 
+    padding-bottom: 50px;
+}
+
+.skill-categories button { 
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 16px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skill-categories button:hover {
+    background-color: white;
+    color: black;
+}
+
+.skill-categories button.active {
+    background-color: white;
+    color: black;
+}
+
+.skill-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.skill-buttons button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 16px;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        opacity 0.25s ease,
+        transform 0.2s ease;
+}
+.skill-buttons button:hover {
+    background-color: white;
+    transform: scale(1.05) !important;
+    color: black;
+}
+
+.skill-buttons button.active {
+    background-color: white;
+    color: black;
+    transform: scale(1.12) !important;
+}
+
+.skill-buttons button.dimmed {
+    opacity: 0.25 !important;
+}
+
+.skill-details {
+    border: 1px solid white;
+    padding: 24px;
+    text-align: left;
+    background-color: rgba(40, 40, 40, 0.6);
+    color: white;
+    font-size: 0.75em;
+}
+
+.skill-details h3 {
+    margin-top: 0;
+}
+
+.skill-icon { 
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.skill-detail-icon { 
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.skill-details-heading { 
+    display: flex;
+    align-items: center;
+    font-size: 1.25em;
+    gap: 12px;
+}
+
+/* Contact Form */
+.contact { 
+    color: white;
+}
 
 body { 
     font-family: var(--secondary-font);
@@ -350,6 +502,7 @@ body {
 footer { 
     display: flex;
     justify-content: center;
+    color: white;
     padding-top: 5vh;
     padding-bottom: 2vh;
 }
