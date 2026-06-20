@@ -21,36 +21,61 @@
     
 }
 /* LOADING SCREEN */
-    #loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #ffffff; /* Cover the content below */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Keeps it on top of everything */
-    transition: opacity 0.5s ease;
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-    /* CSS spinning wheel */
-    .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+#loader-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#loader-percent {
+  font-family: var(--secondary-font);
+  font-size: clamp(30rem, 10vw, 7rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s ease;
 }
 
+#loader-bars1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+  pointer-events: none;
+  height: 100%;
+}
+
+#loader-bars2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+  height: 100%;
+}
+
+.loader-bar {
+  height: 3px;
+  background: silver;
+  width: 0%;
+  transition: width 0.1s ease;
+}
 
 /* 1. Base animation setup */
 @keyframes globalReveal {
@@ -170,10 +195,10 @@
 }
 
 .headshot {  /* Headshot */
-    max-width: 45%;
-    height: auto;
-    margin-top: 75px;
-    align-self: center;
+    height: 40vh;
+    width: auto;
+    margin-top: 100px;
+    margin-right: 250px;
     border: 5px solid white;
 }
 
@@ -191,12 +216,9 @@
 }
 
 .ascii-art-container {
-    position: relative;
-    right: 5%;
-    height: 95vh;
-    width: auto;
-    margin-top: -100px;
-    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .puppet-art {
@@ -206,9 +228,6 @@
 }
 
 .puppet-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
@@ -218,18 +237,17 @@
     position: absolute;
     display: inline-flex;
     font-family: var(--secondary-font);
-    font-size: 2.25em;
+    font-size: 1.5vw;
     font-weight: 800;
     list-style: none;
     transform: translateX(-50%);
     pointer-events: all;
 }
 
-
 /* Position each label under its finger string.
    Tweak these left% values to line up with your actual strings. */
-.puppet-nav p:nth-child(1) { left: 9%; top: 98%} /* {HOME}     */
-.puppet-nav p:nth-child(2) { left: 29%; top: 94%} /* {ABOUT}    */
+.puppet-nav p:nth-child(1) { left: 9%; top: 95%} /* {HOME}     */
+.puppet-nav p:nth-child(2) { left: 30%; top: 94%} /* {ABOUT}    */
 .puppet-nav p:nth-child(3) { left: 38%; top: 89% } /* {PROJECTS} */
 .puppet-nav p:nth-child(4) { left: 58.5%; top: 91% } /* {SKILLS} */
 .puppet-nav p:nth-child(5) { left: 77%; top: 97%} /* {CONTACT}  */
@@ -240,7 +258,7 @@
 .about { 
     min-height: 40vh;
     width: 100%;
-    
+    margin-top: 20vh;
     padding-left: 200px;
     padding-right: 200px;
     padding-bottom: 200px;
@@ -279,6 +297,7 @@
     position: relative;
     min-height: 90vh;
     width: 100%;
+    margin-top: 20vh;
     border-bottom: 2px solid white;
     display: grid;
     padding-left: 200px;
@@ -373,6 +392,7 @@
 .projects iframe { 
     width: 100%;
     height: 70vh;
+    
 } 
 
 /* Skills Section */
@@ -381,6 +401,8 @@
     width: auto;
     color: white;
     font-size: 1.75em;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
     padding-top: 50px;
     
 }
@@ -507,4 +529,211 @@ footer {
     color: white;
     padding-top: 5vh;
     padding-bottom: 2vh;
+}
+
+/* Responsive Design */
+/* --- TABLET (max 1024px) --- */
+@media (max-width: 1024px) {
+
+  .hero h1 {
+    font-size: 3.5em;
+  }
+
+  .headshot { 
+    width: 20vh;
+  }
+
+  .about {
+    padding-left: clamp(1.5rem, 5vw, 100px);
+    padding-right: clamp(1.5rem, 5vw, 100px);
+    padding-bottom: clamp(3rem, 8vw, 100px);
+  }
+
+  .projects {
+    padding-left: clamp(1.5rem, 5vw, 100px);
+    padding-right: clamp(1.5rem, 5vw, 100px);
+  }
+
+  .puppet-nav p {
+    font-size: 1.5em;
+  }
+
+  .ascii-art-container {
+    height: 70vh;
+    right: 0;
+    margin-top: 0;
+  }
+
+  .puppet-art {
+    height: 65vh;
+  }
+
+  .puppet-nav p {
+    font-size: 1.1em;
+  }
+}
+
+
+/* --- MOBILE (max 768px) --- */
+@media (max-width: 768px) {
+
+  /* Hero: stack vertically */
+  .hero {
+    padding: 2rem 1.25rem;
+    align-items: flex-start;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    align-items: flex-start;
+    padding-top: 4rem;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5em);
+    transform: scaleY(3); /* reduce the extreme vertical stretch */
+  }
+
+  .hero h2 {
+    font-size: 0.8em;
+    margin-left: 0;
+  }
+
+  .headshot {
+    max-width: 80%;
+    margin-top: 2rem;
+  }
+
+  /* Hide puppet image + nav on mobile, show a simple nav instead */
+  .ascii-art-container {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .mobile-nav a {
+    font-family: var(--secondary-font);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.4em 0.9em;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .mobile-nav a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  /* About */
+  .about {
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .about-text {
+    font-size: 1.25em;
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 4rem 1.25rem 2rem;
+    min-height: auto;
+  }
+
+  .projects h2 {
+    font-size: 1.5em;
+  }
+
+  #project-counter {
+    font-size: 1.5em;
+    padding: 0.5rem 1rem;
+  }
+
+  .projects iframe {
+    height: 40vh;
+  }
+
+  /* Project nav buttons: pull out of absolute positioning */
+  .projects button {
+    position: static;
+    bottom: auto;
+    left: auto;
+  }
+
+  .project-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 0 1rem;
+  }
+
+  /* Skills */
+  .skills {
+    font-size: 1.25em;
+    padding-top: 2rem;
+  }
+
+  .skills-react {
+    padding: 0 1.25rem;
+  }
+
+  .skill-buttons button {
+    font-size: 0.75em;
+    padding: 8px 12px;
+  }
+}
+
+/* --- SMALL MOBILE (max 480px) --- */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    transform: scaleY(2);
+  }
+
+  .hero h2 {
+    font-size: 0.7em;
+  }
+
+  .headshot {
+    max-width: 100%;
+  }
+
+  .about-text {
+    font-size: 1em;
+    padding: 1rem;
+  }
+
+  .projects h2 {
+    font-size: 1.2em;
+  }
+
+  #project-counter {
+    font-size: 1.2em;
+  }
+
+  .projects iframe {
+    height: 30vh;
+  }
+
+  #loader-bars1,
+  #loader-bars2 {
+    width: 10%; /* narrower bars on small screens */
+  }
 }
