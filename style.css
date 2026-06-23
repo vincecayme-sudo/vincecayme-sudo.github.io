@@ -50,7 +50,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 25%;
+  width: 20%;
   display: flex;
   flex-direction: column-reverse;
   gap: 4px;
@@ -62,7 +62,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 25%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -100,6 +100,13 @@
   animation: globalReveal 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
+.project-slide h2,
+.project-slide p,
+.project-slide button,
+.project-slide iframe {
+    opacity: 1;
+    animation: none; /* This makes the projects section load correcrtly */
+}
 /* Scroll Progress Bar */
 #scroll-progress {
     position: fixed;
