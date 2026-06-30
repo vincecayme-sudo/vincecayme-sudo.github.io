@@ -291,9 +291,17 @@
 }
 
 .about-video { 
-    display: flex;
+    display: inline-flex;
     position: relative;
     margin-left: 100px;
+
+    z-index: -50;
+    
+}
+.about-video2 { 
+    display: inline-flex;
+    position: relative;
+    left: 0%;
 
     z-index: -50;
     
