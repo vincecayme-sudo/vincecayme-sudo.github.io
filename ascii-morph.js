@@ -106,8 +106,9 @@
     let running = true;
 
     function resize() {
-      cols = Math.ceil(window.innerWidth  / cellW) + 1;
-      rows = Math.ceil(window.innerHeight / cellH) + 1;
+      cols = Math.ceil(window.innerWidth / cellW) + 1;
+      const measuredLineHeight = parseFloat(getComputedStyle(pre).lineHeight) || cellH;
+      rows = Math.ceil(window.innerHeight / measuredLineHeight) + 2;
     }
 
     function render() {
