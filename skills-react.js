@@ -99,7 +99,7 @@ function SkillsSection() {
             category: ["Programming"],
             experience: "Intermediate",
             usedFor: "Computer science fundamentals and embedded systems practice",
-            description: "I use C++ to understand lower-level programming concepts and performance.",
+            description: "I use C++ to understand lower-level programming concepts and performance with a particular interest within finance applications.",
             icon: "assets/cpp.png"
         },
         {
@@ -123,7 +123,7 @@ function SkillsSection() {
             category: ["Frontend"],
             experience: "Currently learning",
             usedFor: "Interactive technical skills section",
-            description: "I am learning React by converting part of my portfolio into a component-based interactive interface.",
+            description: "I am currently learning React by converting part of my portfolio into a component-based interactive interface.",
             icon: "assets/react.png"
         },
         {
@@ -131,7 +131,7 @@ function SkillsSection() {
             category: ["Backend","Programming"],
             experience: "Currently learning",
             usedFor: "TBD",
-            description: "I am learning Java during my diploma.",
+            description: "I am currently learning Java during my diploma with a particular focus on OOP concepts.",
             icon: "assets/java.png"
         }
     ];

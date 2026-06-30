@@ -65,7 +65,7 @@
   function initAsciiMorph(container, options = {}) {
     const {
       opacity     = 0.12,   // overall layer opacity
-      speed       = 0.25, // time step per frame
+      speed       = 0.5, // time step per frame
       cellW       = 13,     // px per cell (horizontal)
       cellH       = 20,     // px per cell (vertical)
       octaves     = 4,

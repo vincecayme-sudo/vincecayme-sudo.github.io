@@ -517,6 +517,11 @@
     margin-top: 0;
 }
 
+.skill-details p { 
+  padding-bottom: 40px;
+  font-size: 1.25em;
+}
+
 .skill-icon { 
     width: 24px;
     height: 24px;
@@ -532,8 +537,9 @@
 .skill-details-heading { 
     display: flex;
     align-items: center;
-    font-size: 1.25em;
+    font-size: 2em;
     gap: 12px;
+    padding-bottom: 75px;
 }
 
 /* Contact Form */
