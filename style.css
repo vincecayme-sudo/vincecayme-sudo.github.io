@@ -293,7 +293,7 @@
 .about-video { 
     display: inline-flex;
     position: relative;
-    margin-left: 100px;
+    margin-left: 50px;
 
     z-index: -50;
     
@@ -322,6 +322,7 @@
     min-height: 90vh;
     width: 100%;
     margin-top: 20vh;
+    padding-bottom: 10vh;
     border-bottom: 2px solid white;
     display: grid;
     padding-left: 200px;

@@ -66,19 +66,19 @@
             </div>
             
             <div  class="about-video"> 
-                <video width="640" height="360" autoplay muted loop playsinline controls> 
+                <video width="400"  autoplay muted loop playsinline> 
                     <source src="website.mp4" type="video/mp4"> 
                     Your browser does not support the video tag...
                 </video>
             </div>
             <div class="about-video2"> 
-                <video width="640" height="360" autoplay muted loop playsinline controls> 
+                <video width="400"  autoplay muted loop playsinline> 
                     <source src="website2.mp4" type="video/mp4"> 
                     Your browser does not support the video tag...
                 </video>
             </div>
             <div class="about-video3"> 
-                <video width="640" height="360" autoplay muted loop playsinline controls> 
+                <video width="400" autoplay muted loop playsinline> 
                     <source src="website3.mp4" type="video/mp4"> 
                     Your browser does not support the video tag...
                 </video>
@@ -91,6 +91,7 @@
             <div class="project-slide active"> 
                 <h2>Project 1: C++ Chess Engine (UCI Compliant)</h2>
                 <p>Bitboards, move hashing, speed optimisation</p>
+                <p>Bean is a simple chess engine written in C++ but due to web constraints, had to be compiled to Web Assembly (WASM) and implemented via JavaScript in order to be played online.</p>
                 <iframe src="https://vincecayme-sudo.github.io/chessengine/"></iframe>
             </div>
             <div class="project-slide">
@@ -100,7 +101,8 @@
                 <iframe src="https://vincecayme-sudo.github.io/wellnesswebsite/"></iframe>
             </div>
             <div class="project-slide">
-                <h2>Project 3: Web Application TBD</h2>
+                <h2>Project 3: Full Stack Spring Boot Java Web Application with PostgreSQL </h2>
+                <p>YumLog is a simple app in which users can log meals.</p>
                 <p>Still in the works...</p>
             </div>
         </div>
@@ -141,7 +143,24 @@
     <footer>
         <p>2026 Vince Cayme</p>
     </footer>
+    <script>
+        if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+        }
+
+        // Fallback: Jump to the top of the page instantly
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
+    
     <script src="ascii-morph.js"></script>
+    <script> 
+        initAsciiMorph(document, body, { 
+            opacity: 0.12,
+            speed: 0.25
+        });
+    </script>
     <script src="script.js"></script>
 
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
